@@ -1,24 +1,32 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/tollgate/Nav";
+import { Hero } from "@/components/tollgate/Hero";
+import { WhatIs } from "@/components/tollgate/WhatIs";
+import { Features } from "@/components/tollgate/Features";
+import { CacheDemo } from "@/components/tollgate/CacheDemo";
+import { RoutingFlow } from "@/components/tollgate/RoutingFlow";
+import { Stats } from "@/components/tollgate/Stats";
+import { Install } from "@/components/tollgate/Install";
+import { SelfHosted } from "@/components/tollgate/SelfHosted";
+import { Footer } from "@/components/tollgate/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: Landing,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Landing() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="min-h-screen bg-[color:var(--bg-base)] text-foreground">
+      <Nav />
+      <Hero />
+      <WhatIs />
+      <Features />
+      <CacheDemo />
+      <RoutingFlow />
+      <Stats />
+      <Install />
+      <SelfHosted />
+      <Footer />
+    </main>
   );
 }
