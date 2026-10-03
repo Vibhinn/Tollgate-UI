@@ -36,7 +36,7 @@ export function Typewriter({
   return (
     <span className={className}>
       {text}
-      <span className="ml-0.5 inline-block h-[1em] w-[2px] translate-y-[0.15em] bg-cyan animate-caret align-middle" />
+      <span className="ml-0.5 inline-block h-[1em] w-[2px] translate-y-[0.15em] bg-emerald animate-caret align-middle" />
     </span>
   );
 }

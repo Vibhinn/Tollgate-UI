@@ -44,14 +44,14 @@ function Landing() {
   const [copied, setCopied] = useState(false);
   const reduced = useReducedMotion();
   async function copyInstall() {
-    try { await navigator.clipboard.writeText("pip install tollgate"); setCopied(true); window.setTimeout(() => setCopied(false), 1800); } catch { /* Clipboard permissions vary by browser. */ }
+    try { await navigator.clipboard.writeText("docker pull ghcr.io/vibhinn/tollgate:latest"); setCopied(true); window.setTimeout(() => setCopied(false), 1800); } catch { /* Clipboard permissions vary by browser. */ }
   }
   return (
     <main className="site-shell">
       <header className="site-nav">
         <a href="#top" className="nav-wordmark" aria-label="Tollgate home"><span className="nav-symbol">╫</span> TOLLGATE<span className="nav-period">.</span></a>
         <nav aria-label="Main navigation"><a href="#benchmark">Benchmark</a><a href="#how-it-works">How it works</a><a href="#install">Install</a></nav>
-        <a href="#install" className="nav-action">GET STARTED <ArrowRight size={15} /></a>
+        <a href="/documentation" className="nav-action">DOCUMENTATION <ArrowRight size={15} /></a>
       </header>
 
       <section id="top" className="editorial-hero">
@@ -62,7 +62,7 @@ function Landing() {
             <motion.div className="hero-index" initial={reduced ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>THE LLM PROXY<br />THAT DOES MORE.<br />WITHOUT GETTING IN THE WAY.</motion.div>
             <motion.div className="hero-message" initial={reduced ? false : { opacity: 0, y: 36 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.8, ease }}>
               <p>One gateway between your app and every model. <strong>Route intelligently. Cache what matters. Keep control.</strong></p>
-              <div className="hero-actions"><Button onClick={copyInstall} className="install-command">{copied ? <Check /> : <Copy />}{copied ? "COPIED" : "pip install tollgate"}</Button><a href="#benchmark" className="text-action">SEE THE NUMBERS <ArrowDownRight size={19} /></a></div>
+              <div className="hero-actions"><Button onClick={copyInstall} className="install-command">{copied ? <Check /> : <Copy />}{copied ? "COPIED" : "docker pull ghcr.io/vibhinn/tollgate:latest"}</Button><a href="#benchmark" className="text-action">SEE THE NUMBERS <ArrowDownRight size={19} /></a></div>
             </motion.div>
           </div>
         </div>
@@ -70,20 +70,20 @@ function Landing() {
 
       <section id="benchmark" className="benchmark-section">
         <div className="section-wrap">
-          <motion.div {...reveal} className="section-heading benchmark-heading"><div className="eyebrow">02 / MEASURED, NOT MARKETED</div><h2>THE NUMBERS<br /><span className="outline-title">HOLD UP.</span></h2><p>Same machine. Same upstream. One worker each. Here’s what happened under load.</p></motion.div>
+          <motion.div {...reveal} className="section-heading benchmark-heading"><div className="eyebrow">02 / MEASURED, NOT MARKETED</div><h2>THE NUMBERS<br /><span className="outline-title">HOLD UP.</span></h2><p>Same machine. Same upstream. One worker each.</p></motion.div>
           <div className="benchmark-grid">
-            <motion.div {...reveal} className="benchmark-main"><span className="metric-label">SINGLE-WORKER THROUGHPUT / 50 CONCURRENT</span><strong>~1.9<span>×</span></strong><p>the throughput of LiteLLM <em>per core</em>.</p><div className="comparison-row"><span>TOLLGATE</span><b>341 req/s</b><div className="bar-track"><div className="bar-fill bar-tollgate" /></div></div><div className="comparison-row"><span>LITELLM</span><b>177 req/s</b><div className="bar-track"><div className="bar-fill bar-litellm" /></div></div></motion.div>
-            <motion.div {...reveal} className="benchmark-aside"><span className="metric-label">MEDIAN LATENCY / UNDER LOAD</span><strong>130<span>ms</span></strong><p>vs 268 ms for LiteLLM at 50 concurrent requests. About half the median latency under load.</p><div className="aside-rule" /><span className="metric-label">SINGLE-REQUEST OVERHEAD</span><strong className="aside-number">~5<span>ms</span></strong><p>For both gateways. This is a throughput result, <em>not</em> a claim of faster individual responses.</p></motion.div>
+            <motion.div {...reveal} className="benchmark-main"><span className="metric-label">SINGLE-WORKER THROUGHPUT / 50 CONCURRENT</span><strong>~1.9<span>×</span></strong><p>more throughput than LiteLLM <em>per core</em>.</p><div className="comparison-row"><span>TOLLGATE</span><b>341 req/s</b><div className="bar-track"><div className="bar-fill bar-tollgate" /></div></div><div className="comparison-row"><span>LITELLM</span><b>177 req/s</b><div className="bar-track"><div className="bar-fill bar-litellm" /></div></div></motion.div>
+            <motion.div {...reveal} className="benchmark-aside"><span className="metric-label">MEDIAN LATENCY / UNDER LOAD</span><strong>-51.4<span>%</span></strong><p>130 ms for Tollgate vs 268 ms for LiteLLM.</p><div className="aside-rule" /><span className="metric-label">SINGLE-REQUEST OVERHEAD</span><strong className="aside-number">~5<span>ms</span></strong><p>Minimal overhead over LLM calls</p></motion.div>
           </div>
           <details className="methodology"><summary>BENCHMARK METHODOLOGY <span>+</span></summary><p>Benchmarked October 2026 on an Apple Silicon laptop. Tollgate commit 1ef9f76 vs LiteLLM proxy 1.103.2; Python 3.14, one uvicorn worker with uvloop + httptools. Both forwarded to the same local mock OpenAI-compatible server (22k+ req/s on its own). Non-streaming, ab with keep-alive: 10,000 requests at 50 concurrent, two alternating rounds. Tollgate used Redis-backed auth, rate limiting, backpressure, and exact + semantic cache lookup. LiteLLM used a master key only, without database, cache, or rate limits. These numbers measure gateway overhead, not real-provider response time.</p></details>
         </div>
       </section>
 
       <section id="how-it-works" className="product-section"><div className="section-wrap">
-        <motion.div {...reveal} className="product-intro"><div className="eyebrow">03 / ONE DOOR. EVERY MODEL.</div><h2>YOUR APP TALKS<br />TO <span className="outline-title">TOLLGATE.</span></h2><p>Tollgate handles the rest. OpenAI, Anthropic, and Gemini behind one OpenAI-compatible endpoint, running on your own infrastructure.</p></motion.div>
+        <motion.div {...reveal} className="product-intro"><div className="eyebrow">03 / ONE DOOR. EVERY MODEL.</div><h2>YOUR APP TALKS<br />TO <span className="outline-title">TOLLGATE.</span></h2><p>Tollgate handles the rest. OpenAI, Anthropic, Gemini, self-hosted models behind one OpenAI-compatible endpoint, running on your own infrastructure.</p></motion.div>
         <ProxyDiagram />
         <div className="feature-rows">
-          <motion.div {...reveal} className="feature-row"><span className="feature-number">01</span><h3>ROUTE<br />SMARTER.</h3><p>Choose fast, cheap, or smart. A local classifier directs requests to the right provider without rewriting your application.</p><ArrowDownRight aria-hidden /></motion.div>
+          <motion.div {...reveal} className="feature-row"><span className="feature-number">01</span><h3>ROUTE<br />SMARTER.</h3><p>Choose <strong>fast</strong>, <strong>cheap</strong>, or <strong>smart</strong>. A local classifier directs requests to the right provider without rewriting your application.</p><ArrowDownRight aria-hidden /></motion.div>
           <motion.div {...reveal} className="feature-row"><span className="feature-number">02</span><h3>STOP PAYING<br />TWICE.</h3><p>Exact-match and semantic caching catch repeat and similar requests before they ever reach a paid model.</p><ArrowDownRight aria-hidden /></motion.div>
           <motion.div {...reveal} className="feature-row"><span className="feature-number">03</span><h3>KEEP<br />CONTROL.</h3><p>Token auth, rate limits, backpressure, and request analytics stay where they belong: in front of every provider.</p><ArrowDownRight aria-hidden /></motion.div>
         </div>

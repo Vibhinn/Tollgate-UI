@@ -49,7 +49,7 @@ export function Features() {
     <section id="features" className="relative border-b border-white/5 py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <div className="mono text-xs uppercase tracking-widest text-cyan/80">// capabilities</div>
+          <div className="mono text-xs uppercase tracking-widest text-emerald/80">// capabilities</div>
           <h2 className="mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
             Everything you need in one gateway.
           </h2>
@@ -66,10 +66,10 @@ export function Features() {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.55, delay: i * 0.06, ease: "easeOut" }}
-              className="group relative overflow-hidden rounded-xl border border-cyan/10 bg-[color:var(--bg-elev)]/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan/50 hover:shadow-[0_0_40px_-8px_rgba(0,212,255,0.35)]"
+              className="group relative overflow-hidden rounded-xl border border-emerald/10 bg-[color:var(--bg-elev)]/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-emerald/50 hover:shadow-[0_0_40px_-8px_rgba(16,185,129,0.35)]"
             >
-              <div aria-hidden className="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-cyan/10 opacity-0 blur-3xl transition group-hover:opacity-100" />
-              <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-cyan/25 bg-cyan/5 text-cyan">
+              <div aria-hidden className="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-emerald/10 opacity-0 blur-3xl transition group-hover:opacity-100" />
+              <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-emerald/25 bg-emerald/5 text-emerald">
                 <f.icon className="h-5 w-5" strokeWidth={1.5} />
               </div>
               <h3 className="text-lg font-semibold text-foreground">{f.title}</h3>

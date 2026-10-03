@@ -1,17 +1,14 @@
 import { useState } from "react";
 import { TypedCode } from "./TypedCode";
 
-const pipCode = `# Install Tollgate from PyPI
-pip install tollgate
-
-# Verify the install
-tollgate --version`;
+const imageCode = `# Pull Tollgate from GHCR
+docker pull ghcr.io/vibhinn/tollgate:latest`;
 
 const dockerCode = `# Pull and run with Docker Compose
 docker compose up
 
 # Or use the prebuilt image
-docker run -p 8000:8000 ghcr.io/tollgate/tollgate:latest`;
+docker run -p 8000:8000 ghcr.io/vibhinn/tollgate:latest`;
 
 const wizard = [
   "┌──────────────────────────────────────────┐",
@@ -47,12 +44,12 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)`;
 
 export function Install() {
-  const [tab, setTab] = useState<"pip" | "docker">("pip");
+  const [tab, setTab] = useState<"image" | "docker">("image");
   return (
     <section id="install" className="relative border-b border-white/5 py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <div className="mono text-xs uppercase tracking-widest text-cyan/80">// quickstart</div>
+          <div className="mono text-xs uppercase tracking-widest text-emerald/80">// quickstart</div>
           <h2 className="mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
             Get running in minutes.
           </h2>
@@ -64,7 +61,7 @@ export function Install() {
             <span aria-hidden className="absolute left-[15px] top-2 bottom-2 w-px bg-white/10" />
             {["Install", "Configure", "Start"].map((s, i) => (
               <li key={s} className="relative flex items-start gap-4">
-                <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full border border-cyan/40 bg-[color:var(--bg-elev)] mono text-xs font-semibold text-cyan">
+                <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full border border-emerald/40 bg-[color:var(--bg-elev)] mono text-xs font-semibold text-emerald">
                   {i + 1}
                 </span>
                 <div>
@@ -81,13 +78,13 @@ export function Install() {
               <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Step 1 — Install</h3>
               <div className="overflow-hidden rounded-xl border border-white/10 bg-[color:var(--bg-elev)] shadow-2xl shadow-black/40">
                 <div className="flex items-center gap-1 border-b border-white/5 px-2">
-                  {(["pip", "docker"] as const).map((t) => (
+                  {(["image", "docker"] as const).map((t) => (
                     <button
                       key={t}
                       onClick={() => setTab(t)}
                       className={`px-4 py-2.5 mono text-xs transition ${
                         tab === t
-                          ? "text-cyan border-b border-cyan"
+                          ? "text-emerald border-b border-emerald"
                           : "text-muted-foreground hover:text-foreground"
                       }`}
                     >
@@ -97,7 +94,7 @@ export function Install() {
                 </div>
                 <pre className="overflow-x-auto px-5 py-4 mono text-[13px] leading-relaxed text-foreground/90">
                   <code>
-                    <TypedCode code={tab === "pip" ? pipCode : dockerCode} keySeed={tab} />
+                    <TypedCode code={tab === "image" ? imageCode : dockerCode} keySeed={tab} />
                   </code>
                 </pre>
               </div>
@@ -119,7 +116,7 @@ export function Install() {
                         animation: `tg-fade-line 0.35s ease-out ${i * 0.25}s forwards`,
                       }}
                     >
-                      <span className={line.startsWith("✓") ? "text-emerald" : line.startsWith("›") ? "text-cyan" : "text-foreground/80"}>
+                      <span className={line.startsWith("✓") ? "text-emerald" : line.startsWith("›") ? "text-emerald" : "text-foreground/80"}>
                         {line}
                       </span>
                     </div>
@@ -173,7 +170,7 @@ function colorLine(line: string) {
     if (tok.startsWith('"')) cls = "text-emerald";
     else if (tok.startsWith("#")) cls = "text-muted-foreground";
     else if (["from", "import", "print"].includes(tok)) cls = "text-violet";
-    else if (["client", "resp"].includes(tok)) cls = "text-cyan";
+    else if (["client", "resp"].includes(tok)) cls = "text-emerald";
     parts.push(<span key={idx++} className={cls}>{tok}</span>);
     last = m.index + tok.length;
   }

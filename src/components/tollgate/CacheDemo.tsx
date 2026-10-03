@@ -20,7 +20,7 @@ export function CacheDemo() {
     <section className="relative border-b border-white/5 py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <div className="mono text-xs uppercase tracking-widest text-cyan/80">// semantic cache</div>
+          <div className="mono text-xs uppercase tracking-widest text-emerald/80">// semantic cache</div>
           <h2 className="mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
             Never pay for the same answer twice.
           </h2>
@@ -60,7 +60,7 @@ export function CacheDemo() {
               transition={{ duration: 0.4 }}
               className="hidden md:block"
             >
-              <ArrowRight className="h-5 w-5 text-cyan" />
+              <ArrowRight className="h-5 w-5 text-emerald" />
             </motion.div>
           </div>
 

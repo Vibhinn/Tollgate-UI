@@ -10,11 +10,11 @@ type Line = {
 };
 
 const templates: Omit<Line, "id">[] = [
-  { text: "POST /v1/chat/completions  →  gpt-4o", tag: "fast", color: "#00D4FF" },
+  { text: "POST /v1/chat/completions  →  gpt-4o", tag: "fast", color: "#10B981" },
   { text: "POST /v1/chat/completions  →  claude-sonnet-4", tag: "smart", color: "#7C3AED" },
   { text: "POST /v1/chat/completions  →  CACHE", tag: "HIT ✓", color: "#10B981", hit: true },
   { text: "POST /v1/chat/completions  →  gemini-2.5-flash", tag: "cheap", color: "#4285F4" },
-  { text: "POST /v1/embeddings        →  text-embedding-3-small", tag: "route", color: "#00D4FF" },
+  { text: "POST /v1/embeddings        →  text-embedding-3-small", tag: "route", color: "#10B981" },
   { text: "POST /v1/chat/completions  →  gpt-4o-mini", tag: "cheap", color: "#4285F4" },
   { text: "POST /v1/chat/completions  →  CACHE", tag: "HIT ✓", color: "#10B981", hit: true },
 ];
@@ -35,7 +35,7 @@ export function WhatIs() {
     <section className="relative border-b border-white/5 py-24">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 md:grid-cols-2 md:items-center">
         <div>
-          <div className="mono text-xs uppercase tracking-widest text-cyan/80">// what is tollgate</div>
+          <div className="mono text-xs uppercase tracking-widest text-emerald/80">// what is tollgate</div>
           <h2 className="mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
             A single door in front of every LLM you use.
           </h2>

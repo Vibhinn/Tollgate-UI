@@ -80,9 +80,9 @@ export function NetworkGraph() {
       <svg viewBox={`0 0 ${w} ${h}`} className="w-full h-[300px] md:h-[460px]" preserveAspectRatio="xMidYMid meet">
         <defs>
           <radialGradient id="hex-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#00D4FF" stopOpacity="0.6" />
-            <stop offset="70%" stopColor="#00D4FF" stopOpacity="0.05" />
-            <stop offset="100%" stopColor="#00D4FF" stopOpacity="0" />
+            <stop offset="0%" stopColor="#10B981" stopOpacity="0.6" />
+            <stop offset="70%" stopColor="#10B981" stopOpacity="0.05" />
+            <stop offset="100%" stopColor="#10B981" stopOpacity="0" />
           </radialGradient>
           {providers.map((p) => (
             <radialGradient key={p.key} id={`glow-${p.key}`} cx="50%" cy="50%" r="50%">
@@ -93,7 +93,7 @@ export function NetworkGraph() {
         </defs>
 
         {/* Base paths */}
-        <path d={pathIn} stroke="rgba(0,212,255,0.18)" strokeWidth={1.2} fill="none" />
+        <path d={pathIn} stroke="rgba(16,185,129,0.18)" strokeWidth={1.2} fill="none" />
         {providers.map((p) => (
           <path key={p.key} d={pathOut(p)} stroke={`${p.color}33`} strokeWidth={1.2} fill="none" />
         ))}
@@ -101,8 +101,8 @@ export function NetworkGraph() {
         {/* Your App node */}
         <g>
           <circle cx={app.x} cy={app.y} r={44} fill="url(#hex-glow)" />
-          <circle cx={app.x} cy={app.y} r={22} fill="#0D1220" stroke="#00D4FF" strokeWidth={1.5} />
-          <circle cx={app.x} cy={app.y} r={5} fill="#00D4FF" className="animate-breathe" style={{ transformBox: "fill-box", transformOrigin: "center" }} />
+          <circle cx={app.x} cy={app.y} r={22} fill="#0D1220" stroke="#10B981" strokeWidth={1.5} />
+          <circle cx={app.x} cy={app.y} r={5} fill="#10B981" className="animate-breathe" style={{ transformBox: "fill-box", transformOrigin: "center" }} />
           <text x={app.x} y={app.y + 60} textAnchor="middle" fill="#7C89A3" fontSize="12" fontFamily="Inter">
             Your App
           </text>
@@ -114,17 +114,17 @@ export function NetworkGraph() {
           <polygon
             points="-40,-23 0,-46 40,-23 40,23 0,46 -40,23"
             fill="#0D1220"
-            stroke="#00D4FF"
+            stroke="#10B981"
             strokeWidth={1.8}
           />
           <polygon
             points="-26,-15 0,-30 26,-15 26,15 0,30 -26,15"
             fill="none"
-            stroke="#00D4FF"
+            stroke="#10B981"
             strokeOpacity={thinking ? 0.9 : 0.4}
             strokeWidth={1}
           />
-          <text y={4} textAnchor="middle" fill="#00D4FF" fontSize="11" fontFamily="JetBrains Mono" fontWeight={600}>
+          <text y={4} textAnchor="middle" fill="#10B981" fontSize="11" fontFamily="JetBrains Mono" fontWeight={600}>
             TOLLGATE
           </text>
           <text y={72} textAnchor="middle" fill="#7C89A3" fontSize="12" fontFamily="Inter">
@@ -150,7 +150,7 @@ export function NetworkGraph() {
         {/* Particles */}
         {particles.map((p) => {
           const d = p.phase === "out" ? pathOut(p.provider) : pathIn;
-          const color = p.phase === "out" ? p.provider.color : "#00D4FF";
+          const color = p.phase === "out" ? p.provider.color : "#10B981";
           return (
             <circle key={p.id} r={p.phase === "think" ? 0 : 3.2} fill={color}>
               {p.phase !== "think" && (

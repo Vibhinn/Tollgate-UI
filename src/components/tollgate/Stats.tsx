@@ -49,7 +49,7 @@ export function Stats() {
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 md:grid-cols-4">
         {stats.map((s) => (
           <div key={s.label} className="text-center">
-            <div className="mono text-4xl font-semibold tracking-tight text-cyan md:text-5xl">
+            <div className="mono text-4xl font-semibold tracking-tight text-emerald md:text-5xl">
               {s.prefix}
               <Counter to={s.value} />
               {s.suffix}

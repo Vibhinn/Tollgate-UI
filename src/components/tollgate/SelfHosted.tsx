@@ -7,7 +7,7 @@ export function SelfHosted() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[color:var(--bg-elev)] p-12 text-center">
           <div aria-hidden className="absolute inset-0 bg-grid opacity-40" />
-          <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,212,255,0.10),transparent_60%)]" />
+          <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.10),transparent_60%)]" />
 
           <motion.div
             initial={{ scale: 0.6, opacity: 0 }}
@@ -33,7 +33,7 @@ export function SelfHosted() {
               { icon: Lock, title: "Encrypted config" },
             ].map((c) => (
               <div key={c.title} className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-                <c.icon className="mx-auto mb-2 h-5 w-5 text-cyan" strokeWidth={1.5} />
+                <c.icon className="mx-auto mb-2 h-5 w-5 text-emerald" strokeWidth={1.5} />
                 <div className="text-sm font-medium">{c.title}</div>
               </div>
             ))}

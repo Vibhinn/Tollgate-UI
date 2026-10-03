@@ -8,7 +8,7 @@ export function Hero() {
   const [copied, setCopied] = useState(false);
   const copy = async () => {
     try {
-      await navigator.clipboard.writeText("pip install tollgate");
+      await navigator.clipboard.writeText("docker pull ghcr.io/vibhinn/tollgate:latest");
       setCopied(true);
       setTimeout(() => setCopied(false), 1600);
     } catch {}
@@ -18,7 +18,7 @@ export function Hero() {
     <section className="noise relative overflow-hidden border-b border-white/5">
       {/* Ambient */}
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid opacity-40" />
-      <div aria-hidden className="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-cyan/10 blur-[120px]" />
+      <div aria-hidden className="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-emerald/10 blur-[120px]" />
       <div aria-hidden className="pointer-events-none absolute top-40 right-0 h-[380px] w-[520px] rounded-full bg-violet/15 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 pt-16 pb-8 text-center md:pt-24">
@@ -26,11 +26,11 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mx-auto inline-flex items-center gap-2 rounded-full border border-cyan/20 bg-cyan/5 px-3 py-1 mono text-[11px] text-cyan"
+          className="mx-auto inline-flex items-center gap-2 rounded-full border border-emerald/20 bg-emerald/5 px-3 py-1 mono text-[11px] text-emerald"
         >
           <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan/70" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald/70" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald" />
           </span>
           Smart routing powered by local AI
         </motion.div>
@@ -42,7 +42,7 @@ export function Hero() {
           className="mx-auto mt-6 max-w-4xl text-5xl font-bold tracking-tight text-foreground md:text-7xl"
         >
           One Gateway.{" "}
-          <span className="text-glow-cyan text-cyan">Every LLM.</span>
+          <span className="text-glow-emerald text-emerald">Every LLM.</span>
         </motion.h1>
 
         <div className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
@@ -58,15 +58,15 @@ export function Hero() {
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <button
             onClick={copy}
-            className="group inline-flex items-center gap-3 rounded-md bg-cyan px-5 py-3 mono text-sm font-semibold text-[color:var(--primary-foreground)] transition hover:brightness-110 border-glow-cyan"
+            className="group inline-flex items-center gap-3 rounded-md bg-emerald px-5 py-3 mono text-sm font-semibold text-[color:var(--primary-foreground)] transition hover:brightness-110 border-glow-emerald"
           >
             <Terminal className="h-4 w-4" />
-            <span>{copied ? "Copied!" : "pip install tollgate"}</span>
+            <span>{copied ? "Copied!" : "docker pull ghcr.io/vibhinn/tollgate:latest"}</span>
             {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4 opacity-70" />}
           </button>
           <a
             href="https://github.com"
-            className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/[0.02] px-5 py-3 text-sm font-medium text-foreground/90 transition hover:border-cyan/40 hover:bg-white/[0.05]"
+            className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/[0.02] px-5 py-3 text-sm font-medium text-foreground/90 transition hover:border-emerald/40 hover:bg-white/[0.05]"
           >
             <Github className="h-4 w-4" />
             View on GitHub

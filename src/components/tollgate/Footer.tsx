@@ -7,12 +7,12 @@ export function Footer() {
         <Logo />
         <nav className="flex flex-wrap items-center gap-6 mono text-xs text-muted-foreground">
           <a className="hover:text-foreground" href="https://github.com">GitHub</a>
-          <a className="hover:text-foreground" href="#">Docs</a>
+          <a className="hover:text-foreground" href="/documentation">Docs</a>
           <a className="hover:text-foreground" href="#">PyPI</a>
           <a className="hover:text-foreground" href="#">Docker Hub</a>
         </nav>
         <div className="mono text-xs text-muted-foreground">
-          Built with <span className="text-cyan">♥</span> and Python.
+          Built with <span className="text-emerald">♥</span> and Python.
         </div>
       </div>
     </footer>
