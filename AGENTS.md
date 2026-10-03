@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep the Tollgate homepage as one editorial route with benchmark evidence and product diagrams together; this keeps measured claims adjacent to their methodology.

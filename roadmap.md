@@ -1,0 +1,3 @@
+- [x] Redesign Tollgate landing page with bold editorial typography and animated proxy visualization.
+- [x] Present verified benchmark numbers with conditions and careful wording.
+- [ ] Verify desktop and mobile rendering and install interaction.
