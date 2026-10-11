@@ -50,7 +50,7 @@ function Landing() {
     <main className="site-shell">
       <header className="site-nav">
         <a href="#top" className="nav-wordmark" aria-label="Tollgate home"><span className="nav-symbol">╫</span> TOLLGATE<span className="nav-period">.</span></a>
-        <nav aria-label="Main navigation"><a href="#benchmark">Benchmark</a><a href="#how-it-works">How it works</a><a href="#install">Install</a></nav>
+        <nav aria-label="Main navigation"><a href="#benchmark">Benchmark</a><a href="#how-it-works">How it works</a><a href="#install">Install</a><a href="/blog">Blog</a></nav>
         <a href="/documentation" className="nav-action">DOCUMENTATION <ArrowRight size={15} /></a>
       </header>
 
@@ -91,7 +91,7 @@ function Landing() {
 
       <section className="ownership-section"><div className="section-wrap ownership-inner"><div className="eyebrow">04 / BUILT TO BE YOURS</div><h2>YOUR KEYS.<br />YOUR DATA.<br /><span>YOUR RULES.</span></h2><div className="ownership-bottom"><p>Self-host with Python or Docker. Your gateway, your infrastructure, and no vendor lock-in.</p><div><span><Server size={18} /> SELF-HOSTED</span><span><ShieldCheck size={18} /> TOKEN AUTH</span><span><Zap size={18} /> RATE LIMITS</span></div></div></div></section>
       <Install />
-      <footer className="site-footer"><div className="section-wrap"><a href="#top" className="footer-logo">TOLLGATE<span>.</span></a><div><span>OPEN SOURCE. SELF-HOSTED. BUILT FOR THE WAY YOU SHIP.</span><a href="#top">BACK TO TOP ↑</a></div></div></footer>
+      <footer className="site-footer"><div className="section-wrap"><a href="#top" className="footer-logo">TOLLGATE<span>.</span></a><div><span>OPEN SOURCE. SELF-HOSTED. BUILT FOR THE WAY YOU SHIP.</span><a href="/blog">BLOG</a><a href="/documentation">DOCUMENTATION</a><a href="#top">BACK TO TOP ↑</a></div></div></footer>
     </main>
   );
 }
