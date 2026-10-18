@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Github } from "lucide-react";
 import guide from "../../how_to_use.md?raw";
+import { OpenSourceBanner } from "@/components/tollgate/OpenSourceBanner";
 
 export const Route = createFileRoute("/documentation")({
   head: () => ({
@@ -146,7 +147,8 @@ function Markdown({ lines }: { lines: string[] }) {
 
 function Documentation() {
   return <main className="site-shell docs-shell">
-    <header className="site-nav"><a href="/#top" className="nav-wordmark" aria-label="Tollgate home"><span className="nav-symbol">╫</span> TOLLGATE<span className="nav-period">.</span></a><nav aria-label="Main navigation"><a href="/#benchmark">Benchmark</a><a href="/#how-it-works">How it works</a><a href="/#install">Install</a><a href="/blog">Blog</a></nav><a href="/#top" className="nav-action"><ArrowLeft size={15} /> BACK TO SITE</a></header>
+    <header className="site-nav"><a href="/#top" className="nav-wordmark" aria-label="Tollgate home"><span className="nav-symbol">╫</span> TOLLGATE<span className="nav-period">.</span></a><nav aria-label="Main navigation"><a href="/#benchmark">Benchmark</a><a href="/#how-it-works">How it works</a><a href="/#install">Install</a><a href="/blog">Blog</a></nav><div className="nav-end"><a href="https://github.com/Vibhinn/Tollgate" className="nav-github" target="_blank" rel="noreferrer" aria-label="Tollgate on GitHub"><Github size={17}/></a><a href="/#top" className="nav-action"><ArrowLeft size={15} /> BACK TO SITE</a></div></header>
+    <OpenSourceBanner />
     <div className="docs-layout">
       <aside className="docs-sidebar" aria-label="Documentation sections"><div className="docs-sidebar-label">GUIDE CONTENTS</div><nav>{parsedGuide.sections.map((section, index) => <a key={section.id} href={`#${section.id}`}><span>{String(index + 1).padStart(2, "0")}</span>{section.title.replace(/^\d+\.\s*/, "")}</a>)}</nav></aside>
       <article className="docs-article">

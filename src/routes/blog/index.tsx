@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Github } from "lucide-react";
 import { blogPosts, formatPostDate } from "@/lib/blog-posts";
+import { OpenSourceBanner } from "@/components/tollgate/OpenSourceBanner";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({ meta: [{ title: "Blog — Tollgate" }, { name: "description", content: "Product releases, updates, and notes from Tollgate." }] }),
@@ -12,8 +13,9 @@ function BlogIndex() {
     <header className="site-nav">
       <a href="/#top" className="nav-wordmark" aria-label="Tollgate home"><span className="nav-symbol">╫</span> TOLLGATE<span className="nav-period">.</span></a>
       <nav aria-label="Main navigation"><a href="/#benchmark">Benchmark</a><a href="/documentation">Documentation</a></nav>
-      <a href="/#top" className="nav-action"><ArrowLeft size={15} /> BACK TO SITE</a>
+      <div className="nav-end"><a href="https://github.com/Vibhinn/Tollgate" className="nav-github" target="_blank" rel="noreferrer" aria-label="Tollgate on GitHub"><Github size={17}/></a><a href="/#top" className="nav-action"><ArrowLeft size={15} /> BACK TO SITE</a></div>
     </header>
+    <OpenSourceBanner />
     <section className="blog-index-hero">
       <div className="eyebrow">TOLLGATE / JOURNAL</div>
       <h1>RELEASES.<br/><span className="outline-title">FIELD NOTES.</span></h1>

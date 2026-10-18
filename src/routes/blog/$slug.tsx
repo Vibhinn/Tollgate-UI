@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Github } from "lucide-react";
 import { BlogMarkdown } from "@/components/blog/BlogMarkdown";
 import { formatPostDate, getBlogPost } from "@/lib/blog-posts";
+import { OpenSourceBanner } from "@/components/tollgate/OpenSourceBanner";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => getBlogPost(params.slug),
@@ -20,8 +21,9 @@ function BlogArticle() {
     <header className="site-nav">
       <a href="/#top" className="nav-wordmark" aria-label="Tollgate home"><span className="nav-symbol">╫</span> TOLLGATE<span className="nav-period">.</span></a>
       <nav aria-label="Main navigation"><Link to="/blog">Blog</Link><a href="/documentation">Documentation</a></nav>
-      <Link to="/blog" className="nav-action"><ArrowLeft size={15}/> ALL POSTS</Link>
+      <div className="nav-end"><a href="https://github.com/Vibhinn/Tollgate" className="nav-github" target="_blank" rel="noreferrer" aria-label="Tollgate on GitHub"><Github size={17}/></a><Link to="/blog" className="nav-action"><ArrowLeft size={15}/> ALL POSTS</Link></div>
     </header>
+    <OpenSourceBanner />
     <article className="blog-article">
       <header className="blog-article-header">
         <div className="eyebrow">{post.category} / {formatPostDate(post.date)}</div>

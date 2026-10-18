@@ -160,6 +160,15 @@ body { font-family: "DM Sans", sans-serif; }
 .nav-symbol { color: var(--emerald-accent); padding-right: 8px; font-size: 26px; vertical-align: -2px; }.nav-period,.footer-logo span { color: var(--emerald-accent); }
 .site-nav nav { display: flex; gap: clamp(16px,3vw,44px); font-size: 13px; color: var(--muted-foreground); }.site-nav a:hover { color: var(--emerald-accent); }
 .nav-action { display: inline-flex; align-items: center; gap: 12px; font-size: 11px; font-weight: 700; border-bottom: 1px solid var(--emerald-accent); padding-bottom: 7px; white-space: nowrap; }
+.nav-end { display:flex; align-items:center; justify-content:flex-end; gap:clamp(14px,2vw,26px); }
+.nav-github { display:inline-flex; align-items:center; justify-content:center; color:var(--muted-foreground); padding:5px; transition:color .2s; }
+.nav-github:hover { color:var(--emerald-accent); }
+@media(max-width:900px) { .nav-end { gap:14px; }.site-nav { gap:14px; } }
+@media(max-width:640px) { .nav-github { padding:5px; }.nav-end { gap:10px; } }
+.open-source-banner { display:flex; min-height:48px; align-items:center; justify-content:center; gap:12px; background:var(--emerald-accent); padding:10px 24px; color:#062016; font:700 11px "JetBrains Mono",monospace; letter-spacing:.08em; text-align:center; transition:background .2s; }
+.open-source-banner:hover { background:#34D399; }
+.open-source-banner-link { font-size:10px; font-weight:500; letter-spacing:.03em; }
+@media(max-width:520px) { .open-source-banner { min-height:44px; flex-direction:column; gap:3px; padding:8px 16px; }.open-source-banner-link { font-size:9px; } }
 .editorial-hero { min-height: 730px; display: flex; flex-direction: column; justify-content: center; position: relative; background: var(--bg-base); border-bottom: 1px solid color-mix(in oklab, var(--foreground) 14%, transparent); }
 .editorial-hero::before { content:""; position:absolute; inset:0; pointer-events:none; opacity:.03; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
 .hero-inner { width:100%; padding-top: 70px; padding-bottom: 82px; position:relative; }.hero-kicker,.eyebrow,.hero-index,.metric-label,.diagram-top,.diagram-bottom,.feature-number,.methodology summary,.site-footer,.ownership-bottom span { font-family: "JetBrains Mono",monospace; font-size: 11px; font-weight: 600; letter-spacing: .08em; }

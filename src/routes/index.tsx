@@ -4,6 +4,7 @@ import { ArrowDownRight, ArrowRight, Check, Copy, Github, Server, ShieldCheck, Z
 import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Install } from "@/components/tollgate/Install";
+import { OpenSourceBanner } from "@/components/tollgate/OpenSourceBanner";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,8 +52,12 @@ function Landing() {
       <header className="site-nav">
         <a href="#top" className="nav-wordmark" aria-label="Tollgate home"><span className="nav-symbol">╫</span> TOLLGATE<span className="nav-period">.</span></a>
         <nav aria-label="Main navigation"><a href="#benchmark">Benchmark</a><a href="#how-it-works">How it works</a><a href="#install">Install</a><a href="/blog">Blog</a></nav>
-        <a href="/documentation" className="nav-action">DOCUMENTATION <ArrowRight size={15} /></a>
+        <div className="nav-end">
+          <a href="https://github.com/Vibhinn/Tollgate" className="nav-github" target="_blank" rel="noreferrer" aria-label="Tollgate on GitHub"><Github size={17} /></a>
+          <a href="/documentation" className="nav-action">DOCUMENTATION <ArrowRight size={15} /></a>
+        </div>
       </header>
+      <OpenSourceBanner />
 
       <section id="top" className="editorial-hero">
         <div className="hero-inner">
